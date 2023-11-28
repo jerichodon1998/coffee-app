@@ -4,8 +4,34 @@ import ProgressBar from "../components/ProgressBar";
 import OrderDetails from "../components/OrderDetails";
 import MessageModal from "../components/MessageModal";
 import LoadingModal from "../components/LoadingModal";
+import locationImage from "../assets/location.png";
+import motorRider from "../assets/motorRiderIcon.png";
+
+const motorCoordinates = [
+	{
+		marginRight: "1100px",
+	},
+	{
+		marginRight: "1040px",
+		marginTop: "110px",
+	},
+	{
+		marginRight: "980px",
+		marginTop: "210px",
+	},
+	{
+		marginRight: "910px",
+		marginTop: "320px",
+	},
+	{
+		marginRight: "500px",
+		marginTop: "320px",
+	},
+];
 
 const Location = () => {
+	const [motorPlacement, setMotorPlacement] = useState(motorCoordinates[0]);
+
 	const [progress, setProgress] = useState(0);
 	const [doneText, setDoneText] = useState("");
 	const [mins, setMins] = useState(15);
@@ -39,7 +65,20 @@ const Location = () => {
 		}, 5000);
 	}, []);
 
-	useEffect(() => {}, []);
+	useEffect(() => {
+		setTimeout(() => {
+			setMotorPlacement(motorCoordinates[1]);
+			setTimeout(() => {
+				setMotorPlacement(motorCoordinates[2]);
+				setTimeout(() => {
+					setMotorPlacement(motorCoordinates[3]);
+					setTimeout(() => {
+						setMotorPlacement(motorCoordinates[4]);
+					}, 2000);
+				}, 2000);
+			}, 2000);
+		}, 4000);
+	}, []);
 
 	return (
 		<Box
@@ -52,12 +91,20 @@ const Location = () => {
 				paddingBottom: "50px",
 			}}
 		>
-			<img
-				src={require(`../assets/location.png`)}
-				height={400}
-				width={"100%"}
-				alt="location"
-			/>
+			<Box
+				sx={{
+					height: "400px",
+					width: "100%",
+					backgroundImage: `url(${locationImage})`,
+				}}
+			>
+				<img
+					src={motorRider}
+					alt="motor rider"
+					width={58}
+					style={motorPlacement}
+				/>
+			</Box>
 			<Typography fontSize={24} fontWeight={"bold"}>
 				Delivery rider pick up your coffee and its on the way
 			</Typography>
