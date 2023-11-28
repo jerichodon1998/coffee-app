@@ -2,11 +2,11 @@ import { Box, Button } from "@mui/material";
 import React, { useContext } from "react";
 import UserDetail from "../components/UserDetail";
 import Address from "../components/Address";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserDataContext } from "../App";
 const MyAccount = () => {
 	const { setUserData } = useContext(UserDataContext);
-
+	const navigate = useNavigate();
 	return (
 		<Box
 			sx={{
@@ -37,6 +37,7 @@ const MyAccount = () => {
 						setUserData((prev) => {
 							return { ...prev, isLoggedin: false };
 						});
+						navigate("/");
 					}}
 				>
 					Log out
