@@ -9,18 +9,18 @@ import motorRider from "../assets/motorRiderIcon.png";
 
 const motorCoordinates = [
 	{
-		marginRight: "1100px",
+		marginRight: "1050px",
 	},
 	{
-		marginRight: "1040px",
+		marginRight: "990px",
 		marginTop: "110px",
 	},
 	{
-		marginRight: "980px",
+		marginRight: "930px",
 		marginTop: "210px",
 	},
 	{
-		marginRight: "910px",
+		marginRight: "860px",
 		marginTop: "320px",
 	},
 	{
