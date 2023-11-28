@@ -75,8 +75,8 @@ const Location = () => {
 					setTimeout(() => {
 						setMotorPlacement(motorCoordinates[4]);
 					}, 2000);
-				}, 2000);
-			}, 2000);
+				}, 4000);
+			}, 4000);
 		}, 4000);
 	}, []);
 
